@@ -69,10 +69,53 @@ To uninstall minikube, run
 sudo rm -f /usr/local/bin/minikube
 ```
 
+### TODO Kubernetes
+
+[To install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/), run
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+rm -f kubectl
+```
+
+To uninstall kubectl, run
+```
+sudo rm -f /usr/local/bin/kubectl
+```
+
 ### TODO Helm
+
+[To install Helm](https://helm.sh/docs/intro/install/), run
+```
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+
+To uninstall Helm, run
+```
+sudo rm -f /usr/local/bin/helm
+rm -f ~/.cache/helm
+rm -f ~/.config/helm
+rm -f ~/.local/share/helm
+```
 
 https://helm.sh/docs/intro/quickstart/
 https://helm.sh/docs/intro/using_helm/
+
+### OpenShift
+
+[To install OpenShift CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html), run
+```
+tar -xvf oc.tar
+sudo mv oc /usr/local/bin/oc
+rm -f oc.tar
+```
+
+To login using the CLI, in the web GUI click in your profile and then in "Copy login command".
+
+To uninstall OpenShift CLI, run
+```
+sudo rm -f /usr/local/bin/oc
+```
 
 ## References :books:
 
